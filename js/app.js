@@ -1,14 +1,12 @@
-/*
- * Create a list that holds all of your cards
- */
+//this array contains all of the cards in order
+var symbolsArray = ["fa fa-diamond","fa fa-diamond","fa fa-paper-plane-o","fa fa-paper-plane-o","fa fa-anchor","fa fa-anchor","fa fa-bolt","fa fa-bolt","fa fa-cube","fa fa-cube","fa fa-leaf","fa fa-leaf","fa fa-bicycle","fa fa-bicycle","fa fa-bomb","fa fa-bomb"];
 
+shuffle(symbolsArray); //Now the cards are in random order
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+//This method iterates through the card elements and puts the symbols to their place.
+$(".card").each(function(index){
+  $(this).find("i").attr("class",symbolsArray[index]);
+});
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -24,6 +22,43 @@ function shuffle(array) {
 
     return array;
 }
+
+var gameState={
+  oneCardIsOpenShow:false,
+  numberOfMatses:0,
+  won:false
+};
+var card1 = null;
+var card2 = null;
+$(".card").click(function(){
+   if(!gameState.oneCardIsOpenShow){
+     card1 = $(this);
+     card1.attr("class","card open show");
+     gameState.oneCardIsOpenShow=true;
+   } else{
+     card2 = $(this);
+     card2.attr("class","card open show");
+     if(card1.find("i").attr("class")===card2.find("i").attr("class")){
+       card1.attr("class","card match");
+       card2.attr("class","card match");
+       card1.click(false);
+       card2.click(false);
+       gameState.numberOfMatses++;
+     }
+     else{
+       card1.attr("class","card");
+       card2.attr("class","card");
+     }
+     gameState.oneCardIsOpenShow=false;
+   }
+});
+
+
+
+
+//$(".deck").find("li").toggleClass("match");
+
+
 
 
 /*
