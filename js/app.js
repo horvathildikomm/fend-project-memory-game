@@ -30,14 +30,21 @@ var gameState={
   numberOfMatses:0,
   numberOfStars:3,
   moves:0,
-  won:false
+  won:false,
+  firstClick:true,
 };
 var card1 = null;
 var card2 = null;
 
+
+
 //This is the event listener for a card
 $(".card").click(function onClickFunction(){
-
+  //The time counter starts count on the first click
+  if(gameState.firstClick){
+    countUp();
+    gameState.firstClick=false;
+  }
   //this will run, when the player click on the first card
   if(!gameState.oneCardIsOpenShow){
     card1 = $(this);
@@ -102,7 +109,6 @@ $(".restart").click(() => location.reload());
 //this is a counter function from http://www.webdeveloper.com
 var counter = 0;
 var timer;
-countUp ();
 function countUp () {
 	counter++;
 	timer = setTimeout ( "countUp()", 1000 );

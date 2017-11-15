@@ -6,12 +6,14 @@ Thid is a Memory Game for Udacity Front-End Web Developer Nanodegree Program.
 
 In this poject I used a starter code what was provided. You can download the starter code through either:
 
-	* [the Memory Game project repository on GitHub](https://github.com/udacity/fend-project-memory-game)
-	* [this zipped folder](https://github.com/udacity/fend-project-memory-game/archive/master.zip)
+* [the Memory Game project repository on GitHub](https://github.com/udacity/fend-project-memory-game)
+* [this zipped folder](https://github.com/udacity/fend-project-memory-game/archive/master.zip)
 
 ## How the game is played
 
 The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
+
+The game starts when the player click on the first card. The game restarts if the player click on dhe restart icon.
 
 Each turn:
 
