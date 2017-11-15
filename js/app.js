@@ -1,5 +1,5 @@
 //this array contains all of the cards in order
-var symbolsArray = ["fa fa-diamond","fa fa-diamond","fa fa-paper-plane-o","fa fa-paper-plane-o","fa fa-anchor","fa fa-anchor","fa fa-bolt","fa fa-bolt","fa fa-cube","fa fa-cube","fa fa-leaf","fa fa-leaf","fa fa-bicycle","fa fa-bicycle","fa fa-bomb","fa fa-bomb"];
+let symbolsArray = ["fa fa-diamond","fa fa-diamond","fa fa-paper-plane-o","fa fa-paper-plane-o","fa fa-anchor","fa fa-anchor","fa fa-bolt","fa fa-bolt","fa fa-cube","fa fa-cube","fa fa-leaf","fa fa-leaf","fa fa-bicycle","fa fa-bicycle","fa fa-bomb","fa fa-bomb"];
 
 shuffle(symbolsArray); //Now the cards are in random order
 
@@ -77,7 +77,7 @@ $(".card").click(function onClickFunction(){
     $(".moves").text(gameState.moves);
 
     //removes one star if it is necessary
-    if(gameState.moves===12 || gameState.moves===22 || gameState.moves===32){
+    if(gameState.moves===12 || gameState.moves===22){
       gameState.numberOfStars--;
       $(".fa-star").first().attr("class","fa fa-star-o");
     }
@@ -102,9 +102,9 @@ $(".restart").click(() => location.reload());
 //this is a counter function from http://www.webdeveloper.com
 var counter = 0;
 var timer;
-countUP ();
-function countUP () {
+countUp ();
+function countUp () {
 	counter++;
-	timer = setTimeout ( "countUP()", 1000 );
+	timer = setTimeout ( "countUp()", 1000 );
 	$(".time").text(counter);
 }
