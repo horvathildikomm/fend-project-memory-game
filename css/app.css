@@ -107,3 +107,31 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+
+/*
+ * Styles for the won massage
+ */
+.won{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 200%;
+}
+
+
+.won-massage{
+  text-align: center;
+}
+
+button{
+  font-size: 150%;
+  padding: 15px;
+  border-radius:10px;
+  border: solid #1a4f70 2px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  cursor: pointer;
+}
